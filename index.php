@@ -26,5 +26,5 @@
 			}
 		?>
 		<!-- Main script -->
-	<main>
+	</main>
 </body>
