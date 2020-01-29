@@ -1,3 +1,9 @@
+<?php 
+
+$blacklist = ['css', 'index.php'];
+
+?>
+
 <head>
 	<!-- Title -->
 	<title>Local Web Dev</title>
@@ -8,6 +14,7 @@
 
 <body>
 	<main>
+		<!-- Header -->
 		<header>
 			<h1>LOCAL WEB DEV</h1>
 			<hr>
@@ -15,16 +22,13 @@
 		
 		<!-- Main script -->
 		<?php
-			//search current dir
+			// Search current dir
 			foreach (glob("*") as $filename) {
-				if ($filename != "index.php") {
-						//echo each file name in the dir and hyperlink it
+				if (!in_array($filename, $blacklist)) {
+						// echo each file name in the dir and hyperlink it
 						echo "<a class='dir' href=$filename>$filename</a> <br>";
-				} else {
-					continue;
 				}
 			}
 		?>
-		<!-- Main script -->
 	</main>
 </body>
