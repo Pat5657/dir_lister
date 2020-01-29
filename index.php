@@ -1,6 +1,6 @@
 <?php 
 
-$blacklist = ['css', 'index.php'];
+$blacklist = ['.', '..', 'dir_lister', 'index.php'];
 
 ?>
 
@@ -23,7 +23,7 @@ $blacklist = ['css', 'index.php'];
 		<!-- Main script -->
 		<?php
 			// Search current dir
-			foreach (glob("*") as $filename) {
+			foreach (scandir("../") as $filename) {
 				if (!in_array($filename, $blacklist)) {
 						// echo each file name in the dir and hyperlink it
 						echo "<a class='dir' href=$filename>$filename</a> <br>";
